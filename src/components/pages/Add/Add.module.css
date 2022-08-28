@@ -1,0 +1,158 @@
+.background{
+    
+    
+background-color: rgba(128, 128, 128, 0.082);
+padding-bottom: 50px;
+
+}
+
+.back{
+    position: absolute;
+    top: 35px;
+    left: 40px;
+    width: 54px;
+    height: 54px;
+    background-color: rgba(128, 128, 128, 0);
+    
+}
+
+.form {
+  margin: auto;
+  width: 1226px;
+  height: 973px;
+  border-radius: 18px;
+  margin-top: 20px;
+  padding: 80px;
+  background-color: white;
+}
+
+.top {
+  display: flex;
+  margin: 0px auto 20px auto;
+  width: 700px;
+  padding-top: 120px;
+  justify-content: space-around;
+  
+  
+}
+
+.name_last_name {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: auto;
+  width: 878px;
+}
+
+.name {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 116px 10px 0px;
+  gap: 8px;
+  justify-content: space-between;
+}
+.nameInput {
+  border-radius: 5px;
+  width: 380px;
+  height: 60px;
+  border: solid 1px rgb(123, 174, 216);
+  padding: 15px;
+}
+
+.nameInputInvalid {
+    border-radius: 5px;
+    width: 380px;
+    height: 60px;
+    border: solid 1px red;
+    padding: 15px;
+    background-color: rgba(255, 0, 0, 0.199);
+  }
+
+
+
+h5 {
+  display: flex;
+}
+h6 {
+  display: flex;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: smaller;
+  margin-bottom: 30px;
+}
+
+.select {
+  margin: auto;
+  
+}
+
+select {
+  width: 878px;
+  height: 60px;
+  margin: auto;
+  background-color: #ebebeb;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 20px;
+  border: none;
+  gap:20px;
+  margin-bottom: 10px;
+}
+
+.selectInvalid {
+    width: 878px;
+    height: 60px;
+    margin: auto;
+    background-color: rgba(255, 0, 0, 0.199);
+    padding: 10px;
+    border-radius: 8px;
+    margin: 20px;
+    border: none;
+    gap:20px;
+  }
+
+.nameWide {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 878px;
+  margin: auto;
+  margin-top: 40px;
+}
+.nameWide input {
+  margin: auto;
+  border-radius: 5px;
+  width: 878px;
+  height: 60px;
+  border: solid 1px rgb(123, 174, 216);
+  padding: 15px;
+}
+
+.nameWideInvalid{
+    background-color: rgba(255, 0, 0, 0.199)
+}
+
+.buttonDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    
+    margin: auto;
+    width: 878px;
+}
+button{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    padding: 18px 60px;    
+    width: 176px;
+    height: 60px;
+    background-color:  #62A1EB ;
+    border-radius: 8px;
+    border: none;
+    color: white;
+    
+
+}
+.logo{
+    margin: 50px;
+}

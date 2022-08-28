@@ -1,0 +1,178 @@
+.background {
+  background-color: rgba(128, 128, 128, 0.082);
+  padding-bottom: 50px;
+}
+
+.back {
+  position: absolute;
+  top: 35px;
+  left: 40px;
+  width: 54px;
+  height: 54px;
+  background-color: rgba(128, 128, 128, 0);
+}
+
+.form {
+  margin: auto;
+  width: 1226px;
+
+  border-radius: 18px;
+  margin-top: 20px;
+  padding: 80px;
+  background-color: white;
+}
+
+.dragDrop {
+  width: 878px;
+  height: 423px;
+  background-color: #f7f7f7;
+  border: dashed 2px #4386a9;
+  border-radius: 18px;
+  margin: auto;
+}
+
+.dragText {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #4386a9;
+  width: 195px;
+  height: 76px;
+  font-size: 19px;
+  line-height: 38px;
+  font-style: normal;
+  font-weight: 500;
+  margin: auto;
+  margin-top: 107px;
+}
+
+button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 18px 60px;
+  gap: 20px;
+  width: 233px;
+  height: 60px;
+  background: #62a1eb;
+  border-radius: 8px;
+  margin-top: 40px;
+}
+
+.name_last_name {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  margin-top: 30px;
+  width: 878px;
+  
+}
+
+.name {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 116px 10px 0px;
+  gap: 8px;
+  justify-content: space-between;
+}
+
+.selectDiv {
+  position: relative;
+  top: -12px;
+}
+
+.selectDivNarrow {
+  width: 277px;
+  position: relative;
+  top: -12px;
+}
+
+.nameInput {
+  border-radius: 5px;
+  width: 380px;
+  height: 60px;
+  border: solid 1px rgb(123, 174, 216);
+  padding: 15px;
+}
+.hr {
+  width: 878px;
+  margin: auto;
+}
+
+.nameInputNarrow {
+  border-radius: 5px;
+  width: 277px;
+  height: 60px;
+  border: solid 1px rgb(123, 174, 216);
+  padding: 15px;
+}
+.nameNarrow {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 15px 0px 0px;
+  gap: 8px;
+  justify-content: space-between;
+}
+
+.radioButtonsDiv {
+  display: flex;
+  flex: row;
+  justify-content: flex-start;
+  margin: auto;
+  align-items: center;
+
+  gap: 60px;
+}
+
+.radioSelect input {
+  margin: 5px;
+  margin-left: 0px;
+}
+
+.radioWrap {
+  position: relative;
+  top: -60px;
+  border-radius: 5px;
+  width: 380px;
+  height: 60px;
+  padding: 15px;
+}
+
+.radioWrap h5 {
+  margin-bottom: 25px;
+}
+
+.dateCorrection{
+  position: relative;
+  top: -36px;
+  
+}
+
+.condition{
+  
+  margin: 20px auto 20px 80px;
+ 
+  margin-left: 80px;
+
+}
+
+.formEndButtons{
+  display: flex;
+  margin: auto;
+  flex-direction: row;
+  width: 878px;
+  justify-content: space-between;
+}
+.backButton{
+  background-color: #4385a900;
+  color: #62A1EB;
+  font-weight: 500;
+  width: 20px;
+font-size: 18px;
+}
+
+.saveButton{
+}
