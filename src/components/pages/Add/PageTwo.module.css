@@ -58,6 +58,7 @@ button {
   background: #62a1eb;
   border-radius: 8px;
   margin-top: 40px;
+  z-index: 2;
 }
 
 .name_last_name {
@@ -174,5 +175,7 @@ button {
 font-size: 18px;
 }
 
-.saveButton{
+.uploadButton{
+  position: relative;
+  top: -250px;
 }

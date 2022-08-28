@@ -1,6 +1,8 @@
 import { useDispatch } from "react-redux";
 import { filterActions } from "../../../store";
 import classes from "./PageTwo.module.css";
+import BasicDragAndDrop from "./DragAndDrop2";
+import LaptopOptions from "./laptopOptions";
 
 const PageTwo = () => {
   const dispatch = useDispatch();
@@ -13,15 +15,8 @@ const PageTwo = () => {
       <button className={classes.back} onClick={onBackHandler}>
         <img src="./Screenshot_4.jpg"></img>
       </button>
-      <form className={classes.form}>
-        <div className={classes.dragDrop}>
-          <div className={classes.dragText}>
-            ჩააგდე ან ატვირთე ლეპტოპის ფოტო
-          </div>
-          <div>
-            <button className={classes.button}>ატვირთე</button>
-          </div>
-        </div>
+      <form className={classes.form}>    
+               <BasicDragAndDrop />
         {/* Laptop Selectors */}
         <div className={classes.name_last_name}>
           <div className={classes.name}>
@@ -36,7 +31,7 @@ const PageTwo = () => {
               placeholder="ბრენდი"
             >
               <option>ლეპტოპის ბრენდი</option>
-              <option>sdfa</option>
+              <LaptopOptions/>
             </select>
           </div>
         </div>
