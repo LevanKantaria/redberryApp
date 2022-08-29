@@ -2,6 +2,7 @@ import "./App.css";
 import Landing from "./components/Landing/Landing";
 import { Route, Link, Redirect } from "react-router-dom";
 import Add from "./components/pages/Add/Add";
+import PageThree from "./components/pages/Add/pageThree";
 
 function App() {
   return (
@@ -14,6 +15,9 @@ function App() {
       </Route>
       <Route path="/add">
         <Add />
+      </Route>
+      <Route path='/success' >
+        <PageThree />
       </Route>
     </div>
   );

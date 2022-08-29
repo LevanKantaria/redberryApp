@@ -59,8 +59,7 @@ const PageOne = () => {
       setNumberIsValid(
         (startsWithPlus &&
           /^[+]995/.test(trimmedValue) &&
-          trimmedValue.length === 13) ||
-          /^5\d{8}/.test(trimmedValue)
+          trimmedValue.length === 13)
       );
       
       
@@ -138,8 +137,7 @@ const PageOne = () => {
     setNumberIsValid(
       (startsWithPlus &&
         /^[+]995/.test(trimmedValue) &&
-        trimmedValue.length === 13) ||
-        /^5\d{8}/.test(trimmedValue)
+        trimmedValue.length === 13)
     );
 
     localStorage.setItem("number", value);

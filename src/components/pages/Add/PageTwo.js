@@ -3,14 +3,98 @@ import { filterActions } from "../../../store";
 import classes from "./PageTwo.module.css";
 import BasicDragAndDrop from "./DragAndDrop2";
 import LaptopOptions from "./laptopOptions";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CpuOptions from "./CpuOptions";
+import { useSelector } from "react-redux";
 
-const PageTwo = () => {
+const PageTwo = (props) => {
+  const validUpload = useSelector((state) => state.main.dragState);
+  const [uploadIsValid, setUploadIsValid] = useState(validUpload);
+
   const dispatch = useDispatch();
+
+  if (!localStorage.getItem("name")) {
+    dispatch(filterActions.PageSelect("1"));
+  }
   const onBackHandler = () => {
     dispatch(filterActions.PageSelect("1"));
   };
+
+  useEffect(() => {
+    if (localStorage.getItem("image")) {
+      setUploadIsValid(true);
+      setBrandIsTouched(true);
+    }
+    if (localStorage.getItem("laptop-name")) {
+      let value = localStorage.getItem("laptop-name");
+      setTimeout(() => {
+        setLaptopName(value + " ");
+      }, 10);
+      setTimeout(() => {
+        setLaptopName(value);
+      }, 300);
+      setLaptopName(value);
+      setLaptopNameIsValid(!/[.,<>?ა-ჰ]/.test(value));
+    }
+
+    if (localStorage.getItem("brand")) {
+      let value = localStorage.getItem("brand");
+      setBrand(value);
+      setBrandIsValid(value !== "");
+    }
+
+    if (localStorage.getItem("cpu")) {
+      let value = localStorage.getItem("cpu");
+      setCpu(value);
+      setCpuIsValid(value !== "");
+    }
+
+    if (localStorage.getItem("cpu-core")) {
+      let value = localStorage.getItem("cpu-core");
+      setCpuCore(value);
+      setCpuCoreIsValid(/^\d{1,3}$/.test(value));
+    }
+
+    if (localStorage.getItem("cpu-flow")) {
+      let value = localStorage.getItem("cpu-flow");
+      setCpuFlow(value);
+      setCpuFlowIsValid(/^\d{1,5}$/.test(value));
+    }
+
+    if (localStorage.getItem("ram")) {
+      let value = localStorage.getItem("ram");
+      setRam(value);
+      setRamIsValid(/^\d{1,3}$/.test(value));
+    }
+
+    if (localStorage.getItem("drive")) {
+      let value = localStorage.getItem("drive");
+      setDrive(value);
+      setDriveIsValid(true);
+      let radiobtn = document.getElementById(value);
+      radiobtn.checked = true;
+    }
+    if (localStorage.getItem("date")) {
+      let value = localStorage.getItem("date");
+      setDate(value);
+    }
+
+    if (localStorage.getItem("price")) {
+      let value = localStorage.getItem("price");
+      setPriceIsValid(/^\d{1,4}$/.test(value));
+      setPrice(value);
+    }
+    if (localStorage.getItem("condition")) {
+      let value = localStorage.getItem("condition");
+      setCondition(value);
+      let radiobtnn = document.getElementById(value);
+      radiobtnn.checked = true;
+
+      setConditionIsValid(true);
+    }
+  }, []);
+
+  const [uploadIsTouched, setUploadIsTouched] = useState(false);
 
   const [laptopName, setLaptopName] = useState("");
   const [laptopNameIsValid, setLaptopNameIsValid] = useState(false);
@@ -20,7 +104,32 @@ const PageTwo = () => {
     let value = event.target.value;
     setLaptopNameIsTouched(true);
     setLaptopName(value);
-    setLaptopNameIsValid(!/[.,<>?ა-ჰ]/.test(value));
+
+    setLaptopNameIsValid(/^[\w!@#$%^&*()_+=+\s]+$/.test(value));
+    localStorage.setItem("laptop-name", value);
+  };
+
+  const [brand, setBrand] = useState("");
+  const [brandIsValid, setBrandIsValid] = useState(false);
+  const [brandIsTouched, setBrandIsTouched] = useState(false);
+
+  const brandChangeHandler = (event) => {
+    let value = event.target.value;
+    setBrandIsTouched(true);
+    setBrandIsValid(value !== "");
+    setBrand(value);
+    localStorage.setItem("brand", value);
+  };
+
+  const [cpu, setCpu] = useState("");
+  const [cpuIsValid, setCpuIsValid] = useState(false);
+  const [cpuIsTouched, setCpuIsTouched] = useState(false);
+  const cpuChangeHandler = (event) => {
+    let value = event.target.value;
+    setCpuIsTouched(true);
+    setCpuIsValid(value !== "");
+    setCpu(value);
+    localStorage.setItem("cpu", value);
   };
 
   const [cpuCore, setCpuCore] = useState("");
@@ -32,6 +141,7 @@ const PageTwo = () => {
     setCpuCoreIsTouched(true);
     setCpuCore(value);
     setCpuCoreIsValid(/^\d{1,3}$/.test(value));
+    localStorage.setItem("cpu-core", value);
   };
 
   const [cpuFlow, setCpuFlow] = useState("");
@@ -43,6 +153,7 @@ const PageTwo = () => {
     setCpuFlowIsTouched(true);
     setCpuFlow(value);
     setCpuFlowIsValid(/^\d{1,5}$/.test(value));
+    localStorage.setItem("cpu-flow", value);
   };
 
   const [ram, setRam] = useState("");
@@ -54,6 +165,7 @@ const PageTwo = () => {
     setRamIsTouched(true);
     setRam(value);
     setRamIsValid(/^\d{1,3}$/.test(value));
+    localStorage.setItem("ram", value);
   };
 
   const [drive, setDrive] = useState("");
@@ -64,11 +176,13 @@ const PageTwo = () => {
     setDrive(event.target.value);
     setDriveIsTouched(true);
     setDriveIsValid(true);
+    localStorage.setItem("drive", event.target.value);
   };
 
   const [date, setDate] = useState("");
   const dateChangeHandler = (event) => {
     setDate(event.target.value);
+    localStorage.setItem("date", event.target.value);
   };
 
   const [price, setPrice] = useState("");
@@ -79,6 +193,7 @@ const PageTwo = () => {
     setPriceIsTouched(true);
     setPriceIsValid(/^\d{1,4}$/.test(value));
     setPrice(value);
+    localStorage.setItem("price", value);
   };
 
   const [condition, setCondition] = useState("");
@@ -88,6 +203,7 @@ const PageTwo = () => {
     setCondition(event.target.value);
     setConditionIsTouched(true);
     setConditionIsValid(true);
+    localStorage.setItem("condition", event.target.value);
   };
 
   let laptopNameInputClass = classes.nameInput;
@@ -122,10 +238,41 @@ const PageTwo = () => {
 
   let conditionClassDrive = classes.radioButtonsDiv;
   if (!driveIsValid && driveIsTouched) {
-    conditionClassDrive  = classes.radioButtonsDivInvalid;
+    conditionClassDrive = classes.radioButtonsDivInvalid;
   }
 
-  
+  let brandClass = classes.nameInput;
+  if (brandIsTouched && !brandIsValid) {
+    brandClass = classes.nameInputInvalid;
+  }
+  let cpuClass = classes.selectDivNarrow;
+  if (cpuIsTouched && !cpuIsValid) {
+    cpuClass = classes.selectDivNarrowInvalid;
+  }
+
+  let upload = classes.dragDrop;
+  if (uploadIsTouched && !uploadIsValid) {
+    upload = classes.dragDropInvalid;
+  }
+
+  const uploadChangeHandler = () => {
+    console.log('adfasdfasd')
+      setUploadIsValid(true);
+      upload = classes.dragDrop;
+    
+  };
+
+  const form2IsValid =
+    uploadIsValid &&
+    laptopNameIsValid &&
+    brandIsValid &&
+    cpuIsValid &&
+    cpuCoreIsValid &&
+    cpuFlowIsValid &&
+    ramIsValid &&
+    driveIsValid &&
+    priceIsValid &&
+    conditionIsValid;
 
   const saveHandler = (e) => {
     e.preventDefault();
@@ -133,10 +280,20 @@ const PageTwo = () => {
     setCpuCoreIsTouched(true);
     setCpuFlowIsTouched(true);
     setRamIsTouched(true);
-    setDriveIsTouched(true)
+    setDriveIsTouched(true);
     setPriceIsTouched(true);
     setConditionIsTouched(true);
+    setBrandIsTouched(true);
+    setCpuIsTouched(true);
+    setUploadIsTouched(true);
 
+    if (!date) {
+      localStorage.setItem("date", "");
+    }
+
+    if (form2IsValid) {
+      props.onClick();
+    }
   };
   return (
     <div>
@@ -144,7 +301,7 @@ const PageTwo = () => {
         <img src="./Screenshot_4.jpg"></img>
       </button>
       <form className={classes.form}>
-        <BasicDragAndDrop />
+        <BasicDragAndDrop className={upload} onChange={uploadChangeHandler} />
         {/* Laptop Selectors */}
         <div className={classes.name_last_name}>
           <div className={classes.name}>
@@ -160,11 +317,13 @@ const PageTwo = () => {
           </div>
           <div className={classes.selectDiv}>
             <select
-              className={classes.nameInput}
-              id="bramd"
+              className={brandClass}
+              id="brand"
               placeholder="ბრენდი"
+              onChange={brandChangeHandler}
+              value={brand}
             >
-              <option>ლეპტოპის ბრენდი</option>
+              <option value="">ლეპტოპის ბრენდი</option>
               <LaptopOptions />
             </select>
           </div>
@@ -176,9 +335,11 @@ const PageTwo = () => {
         <div className={classes.name_last_name}>
           <div>
             <select
-              className={classes.selectDivNarrow}
+              className={cpuClass}
               id="cpu"
               placeholder="cpu"
+              onChange={cpuChangeHandler}
+              value={cpu}
             >
               <option>CPU</option>
               <CpuOptions />
@@ -191,6 +352,7 @@ const PageTwo = () => {
               id="core"
               placeholder="14"
               onChange={cpuCoreChangeHandler}
+              value={cpuCore}
             />
             <h6> მხოლოდ ციფრები </h6>
           </div>
@@ -201,6 +363,7 @@ const PageTwo = () => {
               id="hz"
               placeholder="365"
               onChange={cpuFlowChangeHandler}
+              value={cpuFlow}
             />
             <h6> მხოლოდ ციფრები</h6>
           </div>
@@ -214,6 +377,7 @@ const PageTwo = () => {
               id="laptop"
               placeholder="GB"
               onChange={ramChangeHandler}
+              value={ram}
             />
             <h6> მხოლოდ ციფრები </h6>
           </div>
@@ -224,8 +388,8 @@ const PageTwo = () => {
               <div className={classes.radioSelect}>
                 <input
                   type="radio"
-                  id="drive1"
-                  value="ssd"
+                  id="SSD"
+                  value="SSD"
                   name="drive"
                   onChange={driveChangeHandler}
                 />
@@ -234,8 +398,8 @@ const PageTwo = () => {
               <div className={classes.radioSelect}>
                 <input
                   type="radio"
-                  id="drive2"
-                  value="hdd"
+                  id="HDD"
+                  value="HDD"
                   name="drive"
                   onChange={driveChangeHandler}
                 />
@@ -257,6 +421,7 @@ const PageTwo = () => {
                   className={classes.nameInput}
                   id="date"
                   onChange={dateChangeHandler}
+                  value={date}
                 />
               </div>
             </div>
@@ -268,6 +433,7 @@ const PageTwo = () => {
                   id="price"
                   placeholder="0000"
                   onChange={priceChangeHandler}
+                  value={price}
                 />
                 <h6> მხოლოდ ციფრები</h6>
               </div>
@@ -293,8 +459,8 @@ const PageTwo = () => {
               <div className={classes.radioSelect}>
                 <input
                   type="radio"
-                  id="old"
-                  value="old"
+                  id="used"
+                  value="used"
                   name="condition"
                   onChange={conditionChangeHandler}
                 />
@@ -305,7 +471,9 @@ const PageTwo = () => {
         </div>
         <div className={classes.formEndButtons}>
           <div>
-            <button className={classes.backButton} onClick={onBackHandler} >უკან</button>
+            <button className={classes.backButton} onClick={onBackHandler}>
+              უკან
+            </button>
           </div>
           <div>
             <button className={classes.saveButton} onClick={saveHandler}>

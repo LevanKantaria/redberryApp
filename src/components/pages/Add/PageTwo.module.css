@@ -31,6 +31,14 @@
   margin: auto;
 }
 
+.dragDropInvalid {
+  width: 878px;
+  height: 423px;
+  border: dashed 2px #4386a9;
+  background-color: rgba(255, 0, 0, 0.199);
+  border-radius: 18px;
+  margin: auto;
+}
 .dragText {
   display: flex;
   align-items: center;
@@ -88,6 +96,13 @@ button {
   width: 277px;
   position: relative;
   top: -12px;
+  
+}
+.selectDivNarrowInvalid {
+  width: 277px;
+  position: relative;
+  top: -12px;
+  background-color: rgba(255, 0, 0, 0.199);
 }
 
 .nameInput {
@@ -199,4 +214,10 @@ button {
   font-weight: 500;
   width: 20px;
   font-size: 18px;
+}
+
+.uploadInvalid{
+  
+  
+
 }

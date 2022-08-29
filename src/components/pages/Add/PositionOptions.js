@@ -25,7 +25,6 @@ const PositionOptions = (props) => {
 
   let filteredPositions= (positions.filter((item) => item.team_id == id));
 
-  console.log(filteredPositions)
 
   for (let i = 0; i < filteredPositions.length; i++) {
     optionList.push(
