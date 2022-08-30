@@ -44,7 +44,6 @@ function BasicDragAndDrop(props) {
       var reader = new FileReader();
       reader.readAsDataURL(acceptedFiles[0]);
       reader.onload = function () {
-        console.log(reader.result);
         
         dispatch(filterActions.dragAndDropImage(reader.result))
         localStorage.setItem('image', reader.result)

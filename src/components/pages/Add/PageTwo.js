@@ -9,6 +9,7 @@ import { useSelector } from "react-redux";
 
 const PageTwo = (props) => {
   const validUpload = useSelector((state) => state.main.dragState);
+  const width = useSelector((state) => state.main.width);
   const [uploadIsValid, setUploadIsValid] = useState(validUpload);
 
   const dispatch = useDispatch();
@@ -256,11 +257,19 @@ const PageTwo = (props) => {
   }
 
   const uploadChangeHandler = () => {
-    console.log('adfasdfasd')
-      setUploadIsValid(true);
-      upload = classes.dragDrop;
-    
+    console.log("adfasdfasd");
+    setUploadIsValid(true);
+    upload = classes.dragDrop;
   };
+
+  let dynamicName = classes.name_last_name;
+  if (width < 1004) {
+    dynamicName = classes.name_last_name;
+  } else {
+    dynamicName = classes.name_last_name;
+  }
+  console.log(dynamicName);
+  console.log(width);
 
   const form2IsValid =
     uploadIsValid &&
@@ -303,7 +312,7 @@ const PageTwo = (props) => {
       <form className={classes.form}>
         <BasicDragAndDrop className={upload} onChange={uploadChangeHandler} />
         {/* Laptop Selectors */}
-        <div className={classes.name_last_name}>
+        <div className={dynamicName}>
           <div className={classes.name}>
             <h5>ლეპტოპის სახელი</h5>
             <input
@@ -332,7 +341,7 @@ const PageTwo = (props) => {
           <hr></hr>
         </div>
         {/* CPU Selectors */}
-        <div className={classes.name_last_name}>
+        <div className={dynamicName}>
           <div>
             <select
               className={cpuClass}
@@ -369,7 +378,7 @@ const PageTwo = (props) => {
           </div>
         </div>
         {/* RAM  and SSD / HDD SELECTORS */}
-        <div className={classes.name_last_name}>
+        <div className={dynamicName}>
           <div className={classes.name}>
             <h5>ლეპტოპის RAM (GB)</h5>
             <input
@@ -383,7 +392,7 @@ const PageTwo = (props) => {
           </div>
           {/* SSD */}
           <div className={classes.radioWrap}>
-            <h5>მეხსიერების ტიპი</h5>
+            <h5 >მეხსიერების ტიპი</h5>
             <div className={conditionClassDrive}>
               <div className={classes.radioSelect}>
                 <input
@@ -411,36 +420,36 @@ const PageTwo = (props) => {
         {/*  Second Horizontal Line */}
         <div className={classes.hr}>
           <hr></hr>
-          {/* Buy Date and Price  */}
-          <div className={classes.name_last_name}>
-            <div className={classes.name}>
-              <div className={classes.dateCorrection}>
-                <h5>შეძენის რიცხვი(არჩევითი)</h5>
-                <input
-                  type="date"
-                  className={classes.nameInput}
-                  id="date"
-                  onChange={dateChangeHandler}
-                  value={date}
-                />
-              </div>
-            </div>
-            <div className={classes.selectDiv}>
-              <div className={classes.name}>
-                <h5>ლეპტოპის ფასი</h5>
-                <input
-                  className={priceClass}
-                  id="price"
-                  placeholder="0000"
-                  onChange={priceChangeHandler}
-                  value={price}
-                />
-                <h6> მხოლოდ ციფრები</h6>
-              </div>
+        </div>
+        {/* Buy Date and Price  */}
+        <div className={dynamicName}>
+          <div className={classes.name}>
+            <div className={classes.dateCorrection}>
+              <h5>შეძენის რიცხვი(არჩევითი)</h5>
+              <input
+                type="date"
+                className={classes.nameInput}
+                id="date"
+                onChange={dateChangeHandler}
+                value={date}
+              />
             </div>
           </div>
-          <div className={classes.hr}></div>
+          <div className={classes.selectDiv}>
+            <div className={classes.name}>
+              <h5>ლეპტოპის ფასი</h5>
+              <input
+                className={priceClass}
+                id="price"
+                placeholder="0000"
+                onChange={priceChangeHandler}
+                value={price}
+              />
+              <h6> მხოლოდ ციფრები</h6>
+            </div>
+          </div>
         </div>
+        <div className={classes.hr}></div>
         {/* Laptop Condition  */}
         <div className={classes.radioWrap}>
           <div className={classes.condition}>

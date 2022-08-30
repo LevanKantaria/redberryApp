@@ -1,19 +1,15 @@
-.background{
-    
-    
-background-color: rgba(128, 128, 128, 0.082);
-padding-bottom: 50px;
-
+.background {
+  background-color: rgba(128, 128, 128, 0.082);
+  padding-bottom: 50px;
 }
 
-.back{
-    position: absolute;
-    top: 35px;
-    left: 40px;
-    width: 54px;
-    height: 54px;
-    background-color: rgba(128, 128, 128, 0);
-    
+.back {
+  position: absolute;
+  top: 35px;
+  left: 40px;
+  width: 54px;
+  height: 54px;
+  background-color: rgba(128, 128, 128, 0);
 }
 
 .form {
@@ -32,8 +28,6 @@ padding-bottom: 50px;
   width: 700px;
   padding-top: 120px;
   justify-content: space-around;
-  
-  
 }
 
 .name_last_name {
@@ -60,15 +54,13 @@ padding-bottom: 50px;
 }
 
 .nameInputInvalid {
-    border-radius: 5px;
-    width: 380px;
-    height: 60px;
-    border: solid 1px red;
-    padding: 15px;
-    background-color: rgba(255, 0, 0, 0.199);
-  }
-
-
+  border-radius: 5px;
+  width: 380px;
+  height: 60px;
+  border: solid 1px red;
+  padding: 15px;
+  background-color: rgba(255, 0, 0, 0.199);
+}
 
 h5 {
   display: flex;
@@ -82,7 +74,6 @@ h6 {
 
 .select {
   margin: auto;
-  
 }
 
 select {
@@ -94,21 +85,21 @@ select {
   border-radius: 8px;
   margin: 20px;
   border: none;
-  gap:20px;
+  gap: 20px;
   margin-bottom: 10px;
 }
 
 .selectInvalid {
-    width: 878px;
-    height: 60px;
-    margin: auto;
-    background-color: rgba(255, 0, 0, 0.199);
-    padding: 10px;
-    border-radius: 8px;
-    margin: 20px;
-    border: none;
-    gap:20px;
-  }
+  width: 878px;
+  height: 60px;
+  margin: auto;
+  background-color: rgba(255, 0, 0, 0.199);
+  padding: 10px;
+  border-radius: 8px;
+  margin: 20px;
+  border: none;
+  gap: 20px;
+}
 
 .nameWide {
   display: flex;
@@ -127,32 +118,184 @@ select {
   padding: 15px;
 }
 
-.nameWideInvalid{
-    background-color: rgba(255, 0, 0, 0.199)
+.nameWideInvalid {
+  background-color: rgba(255, 0, 0, 0.199);
 }
 
-.buttonDiv{
+.buttonDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+
+  margin: auto;
+  width: 878px;
+}
+button {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding: 18px 60px;
+  width: 176px;
+  height: 60px;
+  background-color: #62a1eb;
+  border-radius: 8px;
+  border: none;
+  color: white;
+}
+.logo {
+  margin: 50px;
+}
+
+@media (max-width: 768px) {
+  .form {
+    margin: auto;
+    width: 100%;
+    height: 973px;
+    border-radius: 18px;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: white;
+  }
+
+  .top {
+    display: flex;
+    margin: auto;
+    width: 179px;
+    padding-top: 20px;
+
+    flex-direction: column;
+  }
+
+  h5 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .back {
+    position: absolute;
+    top: -40px;
+    left: 0px;
+    width: 27px;
+    height: 27px;
+    background-color: rgba(128, 128, 128, 0);
+  }
+  
+  .name_last_name {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: auto;
+    width: 100%;
+    min-width: 378px;
+  }
+
+  .name {
+    display: flex;
+    flex-direction: column;
+    margin:auto;
+    gap: 8px;
+  }
+
+  select {
+    width: 100%;
+    min-width: 358px;
+    height: 60px;
+    margin: auto;
+    background-color: #ebebeb;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 20px;
+    margin-right: 10px;
+    border: none;
+    gap: 20px;
+    margin-bottom: 10px;
+    margin-left: 0px;
+  }
+  
+  .selectInvalid {
+    width: 100%;
+    height: 60px;
+    margin: auto;
+    background-color: rgba(255, 0, 0, 0.199);
+    padding: 10px;
+    border-radius: 8px;
+    margin: 20px;
+    border: none;
+    gap: 20px;
+  }
+
+  
+  .nameWide {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    min-width: 358px;
+    margin: auto;
+    margin-top: 40px;
+  }
+  .nameWide input {
+    margin: auto;
+    border-radius: 5px;
+    width: 100%;
+    min-width: 358px;
+    height: 60px;
+    border: solid 1px rgb(123, 174, 216);
+    padding: 15px;
+  }
+  
+  .nameWideInvalid {
+    background-color: rgba(255, 0, 0, 0.199);
+  }
+
+
+  .nameInput {
+    border-radius: 5px;
+    width: 100%;
+    min-width: 358px;
+    height: 60px;
+    border: solid 1px rgb(123, 174, 216);
+    padding: 15px;
+    
+  }
+  
+  .nameInputInvalid {
+    border-radius: 5px;
+    width: 100%;
+    height: 60px;
+    border: solid 1px red;
+    padding: 15px;
+    background-color: rgba(255, 0, 0, 0.199);
+  }
+
+  
+  .buttonDiv {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    
+  
     margin: auto;
-    width: 878px;
-}
-button{
+    width: 100%;
+  }
+
+  .buttonDiv button {
     display: flex;
     justify-content: center;
     margin: auto;
-    padding: 18px 60px;    
-    width: 176px;
+    padding: 18px 60px;
+    width: 132px;
     height: 60px;
-    background-color:  #62A1EB ;
+    background-color: #62a1eb;
     border-radius: 8px;
     border: none;
     color: white;
-    
+  }
 
+  .logo{
+    display: none;
+  }
 }
-.logo{
-    margin: 50px;
-}
+
+

@@ -16,5 +16,31 @@
   background-color: #62a1eb;
 }
 .main{
-    margin-bottom: 150px;
+  margin-bottom: 150px;
+  
+  background-image: '/Screenshot_3.jpg';
+}
+
+
+@media (max-width:768px){
+  .logo {
+    margin: 80px;
+  }
+  
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 100px;
+    gap: 20px;
+    
+  }
+  
+  .button {
+    width: 358px;
+    background-color: #62a1eb;
+  }
+  .main{
+      margin-bottom: 150px;
+  }
 }

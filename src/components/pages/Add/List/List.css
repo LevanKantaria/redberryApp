@@ -1,0 +1,75 @@
+body {
+  /*   background-color: #222; */
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  line-height: 150%;
+}
+h3{
+    font-family: 'Helvetica Neue';
+font-style: normal;
+font-weight: 700;
+font-size: 34px;
+margin-bottom: 70px;
+margin-top: 80px;
+}
+
+/* Setting up the responsive Grid container - auto-fit + minmax() */
+.laptops {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(563px, 1fr));
+  gap: 2em;
+  margin: 2em;
+  width: 1200px;
+  margin: auto;
+}
+
+/* Grid inside grid - laptop cards also use grid for layout setup */
+.laptop {
+  background: #eafaff;
+  padding: 1.5em;
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 1.5em;
+  width: 563px;
+  height: 205px;
+  border: 1px solid #aed1ea;
+  border-radius: 20px;
+ margin: 26px;
+}
+
+/* Important step - image will spill over the container if width is not declared explicitly */
+.laptop__artwork {
+  width: 100%;
+  border-radius: 0.4em;
+  max-width: 266px;
+}
+
+/* Some additional text styling */
+h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.25em;
+}
+
+
+
+.laptop__details{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: auto;
+    margin-left: 0px;
+}
+.laptop__details h2{
+    font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 21px;
+}
+
+.laptop__details p{
+    font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 21px;
+}

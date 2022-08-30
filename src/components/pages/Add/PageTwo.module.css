@@ -96,7 +96,6 @@ button {
   width: 277px;
   position: relative;
   top: -12px;
-  
 }
 .selectDivNarrowInvalid {
   width: 277px;
@@ -157,7 +156,6 @@ button {
   margin: auto;
   align-items: center;
   gap: 60px;
-  
 }
 
 .radioButtonsDivInvalid {
@@ -216,8 +214,221 @@ button {
   font-size: 18px;
 }
 
-.uploadInvalid{
-  
-  
+.uploadInvalid {
+}
 
+@media (max-width: 768px) {
+  .back {
+    position: absolute;
+    top: -20px;
+    left: 0px;
+    width: 27px;
+    height: 27px;
+    background-color: rgba(128, 128, 128, 0);
+  }
+
+  .form {
+    margin: auto;
+    width: 100%;
+
+    border-radius: 18px;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: white;
+  }
+
+  .dragDrop {
+    width: 100%;
+    height: 244px;
+    background-color: #f7f7f7;
+    border: dashed 2px #4386a9;
+    border-radius: 18px;
+    margin: auto;
+  }
+
+  .dragDrop button {
+    display: none;
+  }
+
+  .dragDropInvalid {
+    width: 100%;
+    height: 244px;
+    border: dashed 2px #4386a9;
+    background-color: rgba(255, 0, 0, 0.199);
+    border-radius: 18px;
+    margin: auto;
+  }
+
+  .dragText {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #4386a9;
+    width: 195px;
+    height: 76px;
+    font-size: 19px;
+    line-height: 38px;
+    font-style: normal;
+    font-weight: 500;
+    margin: auto;
+    margin-top: 80px;
+  }
+
+  .name {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 116px 10px 0px;
+    gap: 8px;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .nameInputNarrow {
+    border-radius: 5px;
+    width: 100%;
+    min-width: 358px;
+    height: 60px;
+    border: solid 1px rgb(123, 174, 216);
+    padding: 5px;
+  }
+
+  .nameInputNarrowInvalid {
+    border-radius: 5px;
+    width: 100%;
+    min-width: 358px;
+    margin: auto;
+    height: 60px;
+    background-color: rgba(255, 0, 0, 0.199);
+    padding: 5px;
+  }
+
+  .nameInput {
+    border-radius: 5px;
+    width: 100%;
+    min-width: 358px;
+    height: 60px;
+    border: solid 1px rgb(123, 174, 216);
+    padding: 15px;
+    margin: auto;
+  }
+  .nameInputInvalid {
+    border-radius: 5px;
+    width: 100%;
+    min-width: 358px;
+    height: 60px;
+    border: solid 1px rgb(123, 174, 216);
+    padding: 15px;
+    background-color: rgba(255, 0, 0, 0.199);
+  }
+
+  .radioWrap {
+    position: relative;
+    top: -30px;
+    border-radius: 5px;
+    width: 380px;
+    height: 60px;
+    padding: 15px;
+  }
+
+  .radioWrap h5 {
+    margin-bottom: 25px;
+  }
+
+  .hr {
+    display: none;
+    width: 0px;
+    margin: auto;
+  }
+
+  .formEndButtons {
+    display: flex;
+    margin: auto;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .saveButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 18px 60px;
+    gap: 20px;
+    width: 162px;
+    height: 46px;
+    background: #62a1eb;
+    border-radius: 8px;
+    margin-top: 40px;
+    z-index: 2;
+  }
+
+  .name_last_name {
+    display: block;
+
+    align-items: center;
+    margin: auto;
+    margin-top: 30px;
+    width: 100%;
+  }
+  .radioWrap {
+    position: relative;
+    top: -30px;
+    border-radius: 5px;
+    width: 380px;
+    height: 60px;
+    padding: 5px;
+    margin-bottom: 60px;
+  }
+  .radioWrap h5 {
+    margin-bottom: 5px;
+  }
+
+  .condition {
+    margin: auto;
+    margin-left: 0px;
+  }
+
+  .radioButtonsDiv {
+    display: flex;
+    flex: row;
+    justify-content: flex-start;
+
+    margin-left: 0px;
+    align-items: center;
+  }
+
+  .radioButtonsDivInvalid {
+    display: flex;
+    flex: row;
+    justify-content: flex-start;
+    margin: auto;
+    margin-left: 0px;
+    align-items: center;
+    border-radius: 20px;
+
+    gap: 60px;
+    border: solid 1px rgb(123, 174, 216);
+    padding: 15px;
+    background-color: rgba(255, 0, 0, 0.199);
+  }
+  .radioSelect input {
+    margin: 5px;
+    margin-left: 0px;
+  }
+
+  .selectDivNarrow {
+    width: 100%;
+    position: relative;
+    top: -12px;
+  }
+  .selectDivNarrowInvalid {
+    width: 100%;
+    position: relative;
+    top: -12px;
+    background-color: rgba(255, 0, 0, 0.199);
+  }
+
+  
 }
