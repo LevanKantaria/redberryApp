@@ -6,6 +6,7 @@ const TeamOptions = (props) => {
   const [teams, setTeams] = useState([]);
   let teamGetUrl = "https://pcfy.redberryinternship.ge/api/teams";
   let optionList = [];
+  
 
   useEffect(() => {
     let responseTeams = [];
@@ -21,6 +22,7 @@ const TeamOptions = (props) => {
   }, []);
 
   for (let i = 0; i < teams.length; i++) {
+    
     optionList.push(
       <option key={Math.random()} id={teams[i].id} value={teams[i].id}>
         {teams[i].name}
@@ -32,3 +34,4 @@ const TeamOptions = (props) => {
 };
 
 export default TeamOptions;
+

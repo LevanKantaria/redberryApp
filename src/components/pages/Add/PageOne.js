@@ -21,10 +21,13 @@ const PageOne = () => {
   //   Check if Data is in LocalStorage, If data exists, fill the form
 
   useEffect(() => {
-
-      if (localStorage.getItem("name")) {
-        setTimeout(()=>{ setName(localName +' ');},1)
-        setTimeout(()=>{ setName(localName);},300)
+    if (localStorage.getItem("name")) {
+      setTimeout(() => {
+        setName(localName + " ");
+      }, 1);
+      setTimeout(() => {
+        setName(localName);
+      }, 300);
       let localName = localStorage.getItem("name");
       setName(localName);
       setNameIsValid(localName.length > 1 && /^[ა-ჰ]+$/.test(localName));
@@ -33,12 +36,14 @@ const PageOne = () => {
     if (localStorage.getItem("last-name")) {
       let localLastName = localStorage.getItem("last-name");
       setLastName(localLastName);
-      setLastNameIsValid(localLastName.length > 1 && /^[ა-ჰ]+$/.test(localLastName));
+      setLastNameIsValid(
+        localLastName.length > 1 && /^[ა-ჰ]+$/.test(localLastName)
+      );
     }
     if (localStorage.getItem("team")) {
       let localTeam = localStorage.getItem("team");
       setTeam(localTeam);
-      setTeamIsValid(localTeam !== "")
+      setTeamIsValid(localTeam !== "");
       dispatch(filterActions.idSelect(localTeam));
     }
     if (localStorage.getItem("position")) {
@@ -49,7 +54,7 @@ const PageOne = () => {
     if (localStorage.getItem("email")) {
       let localEmail = localStorage.getItem("email");
       setEmail(localEmail);
-      setEmailIsValid(/^\w+([\.-]?\w+)*@redberry.ge$/.test(localEmail))
+      setEmailIsValid(/^\w+([\.-]?\w+)*@redberry.ge$/.test(localEmail));
     }
     if (localStorage.getItem("number")) {
       let localNumnber = localStorage.getItem("number");
@@ -57,12 +62,10 @@ const PageOne = () => {
       let trimmedValue = localNumnber.replace(/\s/g, "");
       let startsWithPlus = /^[+]\d{12}$/.test(trimmedValue);
       setNumberIsValid(
-        (startsWithPlus &&
+        startsWithPlus &&
           /^[+]995/.test(trimmedValue) &&
-          trimmedValue.length === 13)
+          trimmedValue.length === 13
       );
-      
-      
     }
   }, [ids]);
 
@@ -135,9 +138,9 @@ const PageOne = () => {
     let startsWithPlus = /^[+]\d{12}$/.test(trimmedValue);
 
     setNumberIsValid(
-      (startsWithPlus &&
+      startsWithPlus &&
         /^[+]995/.test(trimmedValue) &&
-        trimmedValue.length === 13)
+        trimmedValue.length === 13
     );
 
     localStorage.setItem("number", value);
@@ -153,15 +156,15 @@ const PageOne = () => {
   const onClickHandler = (event) => {
     event.preventDefault();
     if (formIsValid) {
-      console.log('form is valid')
-      dispatch(filterActions.PageSelect('2'));
-    }else{
-      setNameIsTouched(true)
-      setLastNameIsTouched(true)
-      setTeamIsTouched(true)
-      setPositionIsTouched(true)
-      setEmailIsTouched(true)
-      setNumberIsTouched(true)
+      console.log("form is valid");
+      dispatch(filterActions.PageSelect("2"));
+    } else {
+      setNameIsTouched(true);
+      setLastNameIsTouched(true);
+      setTeamIsTouched(true);
+      setPositionIsTouched(true);
+      setEmailIsTouched(true);
+      setNumberIsTouched(true);
     }
   };
 
@@ -195,13 +198,13 @@ const PageOne = () => {
   }
 
   return (
-    <div >
+    <div>
       <div>
         <button className={classes.back} onClick={onBackHandler}>
           <img src="./Screenshot_4.jpg"></img>
         </button>
       </div>
-      
+
       <form className={classes.form}>
         {/* saxeli gvari */}
         <div className={classes.name_last_name}>
@@ -282,7 +285,6 @@ const PageOne = () => {
           </div>
         </div>
       </form>
-    
     </div>
   );
 };

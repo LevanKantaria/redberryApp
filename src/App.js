@@ -7,6 +7,7 @@ import List from "./components/pages/Add/List/List";
 import { useState, useLayoutEffect, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { filterActions } from "./store";
+import Details from "./components/pages/Details/Details";
 
 function App() {
 
@@ -46,6 +47,9 @@ function App() {
       </Route>
       <Route path="/list">
         <List />
+      </Route>
+      <Route  path='/laptop/:id'>
+        <Details />
       </Route>
     </div>
   );

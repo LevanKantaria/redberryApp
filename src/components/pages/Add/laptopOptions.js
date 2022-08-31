@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 
 const LaptopOptions = (props) => {
-  const [laptops, setLaptops] = useState([]);
+  const [brands, setBrands] = useState([]);
   let brandsGetUrl = "https://pcfy.redberryinternship.ge/api/brands";
   let optionList = [];
 
@@ -16,14 +16,14 @@ const LaptopOptions = (props) => {
         responseLaptops.push(dataRes[key]);
       }
 
-      setLaptops(responseLaptops);
+      setBrands(responseLaptops);
     });
   }, []);
 
-  for (let i = 0; i < laptops.length; i++) {
+  for (let i = 0; i < brands.length; i++) {
     optionList.push(
-      <option key={Math.random()} id={laptops[i].id} value={laptops[i].id}>
-        {laptops[i].name}
+      <option key={Math.random()} id={brands[i].id} value={brands[i].id}>
+        {brands[i].name}
       </option>
     );
   }

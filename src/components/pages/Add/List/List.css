@@ -14,7 +14,7 @@ h3 {
 }
 .back {
   position: absolute;
-  top: -40px;
+  top: 20px;
   left: 0px;
   width: 27px;
   height: 27px;
@@ -28,6 +28,7 @@ h3 {
   gap: 2em;
   margin: 2em;
   width: 1200px;
+
   margin: auto;
 }
 
@@ -50,6 +51,7 @@ h3 {
   width: 100%;
   border-radius: 0.4em;
   max-width: 266px;
+  line-height: 20px;
 }
 
 /* Some additional text styling */
@@ -80,11 +82,18 @@ h2 {
   line-height: 21px;
 }
 
+.backDiv{
+  display: flex;
+  flex-direction: row;
+  
+}
+
+
 @media (max-width: 768px) {
   .back {
     position: absolute;
-    top: -40px;
-    left: 0px;
+    top: 25px;
+    left: -30px;
     width: 27px;
     height: 27px;
     background-color: rgba(128, 128, 128, 0);
@@ -119,6 +128,7 @@ h2 {
     max-width: 164px;
     max-height: 109px;
     margin: auto;
+    line-height: 40px;
   }
 
   .laptop__details {
@@ -141,4 +151,8 @@ h2 {
     font-size: 18px;
     line-height: 10px;
   }
+}
+.laptop__artist{
+width: 100%;
+margin-left: 0px;
 }

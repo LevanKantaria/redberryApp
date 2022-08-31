@@ -307,7 +307,7 @@ const PageTwo = (props) => {
   return (
     <div>
       <button className={classes.back} onClick={onBackHandler}>
-        <img src="./Screenshot_4.jpg"></img>
+        <img src="/Screenshot_4.jpg"></img>
       </button>
       <form className={classes.form}>
         <BasicDragAndDrop className={upload} onChange={uploadChangeHandler} />
