@@ -96,12 +96,25 @@ button {
   width: 277px;
   position: relative;
   top: -12px;
+  border: solid 3px #6499FF
+
+}
+
+
+.selectDivNarrow:focus{
+  border: solid 3px #6499FF
+}
+.selectDivNarrowInvalid:focus{
+  border: solid 3px red;
+  outline-color: red;
 }
 .selectDivNarrowInvalid {
   width: 277px;
   position: relative;
   top: -12px;
-  background-color: rgba(255, 0, 0, 0.199);
+  background-color: rgba(255, 0, 0, 0.089);
+  border: solid 1px red
+
 }
 
 .nameInput {
@@ -111,13 +124,23 @@ button {
   border: solid 1px rgb(123, 174, 216);
   padding: 15px;
 }
+
+.nameInput:focus{
+  outline-color: #6499FF;
+  background-color: #2b4cf213 ;
+}
+.nameInputInvalid:focus{
+  outline-color:red ;
+}
+
 .nameInputInvalid {
   border-radius: 5px;
   width: 380px;
   height: 60px;
-  border: solid 1px rgb(123, 174, 216);
+  border: solid 2px rgb(235, 17, 17);
   padding: 15px;
-  background-color: rgba(255, 0, 0, 0.199);
+  background-color: rgba(255, 0, 0, 0.048);
+  
 }
 
 .hr {
@@ -133,12 +156,22 @@ button {
   padding: 15px;
 }
 
+.nameInputNarrow:focus{
+  outline-color: #6499FF;
+  background-color: #2b4cf213 ;
+}
+.nameInputNarrowInvaid:focus{
+  outline-color:red ;
+  border: none;
+}
 .nameInputNarrowInvalid {
   border-radius: 5px;
   width: 277px;
   height: 60px;
   background-color: rgba(255, 0, 0, 0.199);
+  border: solid 1px red;
   padding: 15px;
+  outline-color: red;
 }
 
 .nameNarrow {
@@ -214,8 +247,7 @@ button {
   font-size: 18px;
 }
 
-.uploadInvalid {
-}
+
 
 @media (max-width: 768px) {
   .back {
@@ -292,6 +324,14 @@ button {
     padding: 5px;
   }
 
+  .nameInputNarrow:focus{
+    outline-color: #6499FF;
+    background-color: #2b4cf213 ;
+  }
+  .nameInputNarrowInvaid:focus{
+    outline-color:red ;
+    border: none;
+  }
   .nameInputNarrowInvalid {
     border-radius: 5px;
     width: 100%;
@@ -311,14 +351,23 @@ button {
     padding: 15px;
     margin: auto;
   }
+
+  .nameInput:focus{
+    outline-color: #6499FF;
+    background-color: #2b4cf213 ;
+  }
+  .nameInputInvalid:focus{
+    outline-color:red ;
+  }
+  
   .nameInputInvalid {
     border-radius: 5px;
     width: 100%;
     min-width: 358px;
     height: 60px;
-    border: solid 1px rgb(123, 174, 216);
+    border: solid 1px rgb(236, 48, 48);
     padding: 15px;
-    background-color: rgba(255, 0, 0, 0.199);
+    background-color: rgba(255, 0, 0, 0.075);
   }
 
   .radioWrap {
@@ -427,7 +476,7 @@ button {
     width: 100%;
     position: relative;
     top: -12px;
-    background-color: rgba(255, 0, 0, 0.199);
+    background-color: rgba(255, 0, 0, 0.082);
   }
 
   

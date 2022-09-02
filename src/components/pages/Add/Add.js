@@ -6,12 +6,14 @@ import PageTwo from "./PageTwo";
 import { useDispatch } from "react-redux";
 import axios from "axios";
 import { useHistory } from "react-router";
-import {  useState, useLayoutEffect } from "react";
+import { useState, useLayoutEffect } from "react";
 
 const Add = () => {
+  const form_data = new FormData();
+
   const history = useHistory();
   const formPage = useSelector((state) => state.main.formPage);
-  const width = useSelector((state) => state.main.width )
+  const width = useSelector((state) => state.main.width);
 
   const dispatch = useDispatch();
 
@@ -24,11 +26,10 @@ const Add = () => {
     doc1Style = { borderBottom: "solid 0px black" };
   }
 
-  
-
-
   const submitHandler = () => {
+    console.log("Step after submit");
     if (localStorage.getItem("image")) {
+      console.log("step 2: image in localStorage Exists");
       function dataURLtoFile(dataurl, filename) {
         var arr = dataurl.split(","),
           mime = arr[0].match(/:(.*?);/)[1],
@@ -40,6 +41,7 @@ const Add = () => {
           u8arr[n] = bstr.charCodeAt(n);
         }
 
+        console.log("Log from DataUrlToFile Function");
         return new File([u8arr], filename, { type: mime });
       }
 
@@ -68,7 +70,13 @@ const Add = () => {
       laptop_purchase_date: localStorage.getItem("date"),
       laptop_price: localStorage.getItem("price"),
     };
-    console.log(file);
+    console.log(file + "this is Image");
+
+    for ( var key in uploadData ) {
+      form_data.append(key, uploadData[key])
+    }
+    
+
     axios
       .post(
         "https://pcfy.redberryinternship.ge/api/laptop/create",
@@ -77,22 +85,28 @@ const Add = () => {
           headers: {
             accept: "application/json",
             "Content-Type": `multipart/form-data`,
+
           },
         }
       )
       .then((res) => {
+        console.log('Log after receiving response')
         console.log(res);
         if (res.statusText === "OK") {
           history.push("/success");
-          localStorage.clear();
+          // localStorage.clear();
 
           return "success!";
         } else {
+          console.log(' Error Log after receiving response')
+
           return "errror!";
         }
       });
+
+    
   };
- 
+
   return (
     <div className={classes.background}>
       {width > 1000 && (
@@ -111,13 +125,13 @@ const Add = () => {
           </h5>
         </div>
       )}
-      {width < 1000 && ( formPage ==='1' &&
+      {width < 1000 && formPage === "1" && (
         <div className={classes.top}>
           <h5> თანამშრომლების ინფო </h5>
           <section>1/2</section>
         </div>
       )}
-      {width < 1000 && ( formPage ==='2' &&
+      {width < 1000 && formPage === "2" && (
         <div className={classes.top}>
           <h5> ლეპტოპის მახასიეთებლები </h5>
           <section>2/2</section>

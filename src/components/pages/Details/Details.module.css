@@ -127,7 +127,7 @@ h1 {
     
   }
   .image {
-    max-width: 380px;
+    max-width: 370px;
     max-height: 220px;
     margin: auto;
   }
@@ -201,7 +201,7 @@ h1 {
     position: absolute;
   
     top: -18px;
-    left: -25px;
+    left: -15px;
     width: 54px;
     height: 54px;
     margin-left: -15px;

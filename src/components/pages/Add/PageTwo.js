@@ -47,7 +47,7 @@ const PageTwo = (props) => {
     if (localStorage.getItem("cpu")) {
       let value = localStorage.getItem("cpu");
       setCpu(value);
-      setCpuIsValid(value !== "");
+      setCpuIsValid(value !== "" || value!=='');
     }
 
     if (localStorage.getItem("cpu-core")) {
@@ -128,7 +128,7 @@ const PageTwo = (props) => {
   const cpuChangeHandler = (event) => {
     let value = event.target.value;
     setCpuIsTouched(true);
-    setCpuIsValid(value !== "");
+    setCpuIsValid(value !== 'CPU');
     setCpu(value);
     localStorage.setItem("cpu", value);
   };

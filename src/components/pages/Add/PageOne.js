@@ -154,6 +154,7 @@ const PageOne = () => {
     emailIsValid &&
     numberIsValid;
   const onClickHandler = (event) => {
+    
     event.preventDefault();
     if (formIsValid) {
       console.log("form is valid");

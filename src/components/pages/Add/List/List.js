@@ -3,7 +3,10 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import { useSelector } from "react-redux";
 const List = () => {
+  const width = useSelector((state) => state.main.width);
+
   const history = useHistory();
   const [laptops, setLaptops] = useState([]);
   let linkToDetails = '';
@@ -49,9 +52,12 @@ console.log(laptops)
   return (
     <div>
       <div className="backDiv">
-        <button className="back" onClick={onBackHandler}>
-          <img src="./Screenshot_23.jpg"></img>
-        </button>
+      {width > 1000 &&<button className='back' onClick={onBackHandler}>
+          <img src="/Screenshot_23.jpg"></img>
+        </button>}
+        {width < 1000 &&<button className='back' onClick={onBackHandler}>
+          <img src="/Screenshot_24.jpg"></img>
+        </button>}
       </div>
       <h3> ჩანაწერების სია</h3>
 

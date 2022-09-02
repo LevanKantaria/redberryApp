@@ -53,13 +53,26 @@
   padding: 15px;
 }
 
+.nameInput:focus{
+  border: solid 2px #6499FF;
+  outline-color: #6499FF;
+  background-color: rgba(100, 154, 255, 0.096);
+
+
+}
+
 .nameInputInvalid {
   border-radius: 5px;
   width: 380px;
   height: 60px;
   border: solid 1px red;
   padding: 15px;
-  background-color: rgba(255, 0, 0, 0.199);
+  background-color: rgba(255, 0, 0, 0.041);
+}
+
+.nameInputInvalid:focus{
+  outline-color:red ;
+ 
 }
 
 h5 {
@@ -71,6 +84,9 @@ h6 {
   font-size: smaller;
   margin-bottom: 30px;
 }
+
+
+
 
 .select {
   margin: auto;
@@ -116,11 +132,22 @@ select {
   height: 60px;
   border: solid 1px rgb(123, 174, 216);
   padding: 15px;
+  outline-color:#62a1eb;
 }
 
+
+
+
 .nameWideInvalid {
-  background-color: rgba(255, 0, 0, 0.199);
+  background-color: rgba(255, 0, 0, 0.096);
+  outline-color: red;
 }
+
+.nameWideInvalid:focus{
+  background-color: rgba(255, 0, 0, 0.103);
+ outline-color: red;
+}
+
 
 .buttonDiv {
   display: flex;
@@ -142,11 +169,21 @@ button {
   border: none;
   color: white;
 }
+
+button:hover{
+  background-color: #317AD0;
+
+}
+
+button:active{
+  background-color:#1A5DAB
+}
 .logo {
   margin: 50px;
 }
 
 @media (max-width: 768px) {
+
   .form {
     margin: auto;
     width: 100%;
@@ -229,10 +266,26 @@ button {
     margin-bottom: 10px;
     margin-left: 0px;
     background-color: rgba(255, 0, 0, 0.199);
+    outline-color: red;
+    border: none;
     
   }
 
+  .selectInvalid:focus{
+    outline-color: red;
+  }
+
+  .nameInput:focus{
+  background-color: rgba(100, 154, 255, 0.096);
   
+  border: solid 1px 6499FF;
+ 
+}
+
+.nameInputInvalid:focus{
+  outline-color:red ;
+}
+
   .nameWide {
     display: flex;
     flex-direction: column;
@@ -251,6 +304,11 @@ button {
     border: solid 1px rgb(123, 174, 216);
     padding: 15px;
   }
+
+  .nameWide input:focus{
+    background-color: #1a5eab21;
+  }
+
   
   .nameWideInvalid {
     background-color: rgba(255, 0, 0, 0.199);
