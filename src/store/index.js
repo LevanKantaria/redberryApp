@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const filterSlice = createSlice({
   name: "main",
-  initialState: { id: "", formPage: "1", images: [], dragState: false, width:'' },
+  initialState: { id: "", formPage: "1", images: [], dragState: false, width:'', pageOneIsValid:(false) },
   reducers: {
     idSelect(state, action) {
       state.id = action.payload;
@@ -25,7 +25,12 @@ const filterSlice = createSlice({
     },
     windowWidth(state,action){
       state.width = action.payload
-    }
+    },
+      pageOneValidCheck(state,action){
+        state.pageOneIsValid = action.payload
+        console.log(state.pageOneIsValid)
+      }
+
   },
 });
 

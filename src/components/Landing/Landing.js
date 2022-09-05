@@ -2,7 +2,6 @@ import classes from "./Landing.module.css";
 import Button from "react-bootstrap/Button";
 import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
 
 const Landing = () => {
   const history = useHistory();
@@ -15,7 +14,6 @@ const Landing = () => {
     history.push("/list");
   };
 
-  // get Window size
   
 
   return (

@@ -9,34 +9,27 @@ function BasicDragAndDrop(props) {
   const dispatch = useDispatch();
   const [dragIsValid, setDragIsValid] = useState(false);
   const { acceptedFiles, getRootProps, getInputProps } = useDropzone();
-  const [imageName, setImageName] = useState('');
-
+  const [imageName, setImageName] = useState("");
 
   const uploadHandler = (event) => {
     event.preventDefault();
-
-   
   };
-  
-  
+
   let files = acceptedFiles.map((file) => (
     <li key={file.path}>
       {file.path} - {file.size} bytes
     </li>
   ));
 
-  useEffect(()=>{
-
-    if(localStorage.getItem('image-name')){
-      setImageName(localStorage.getItem('image-name'))
+  useEffect(() => {
+    if (localStorage.getItem("image-name")) {
+      setImageName(localStorage.getItem("image-name"));
     }
-    
-  },[])
-  
-  
+  }, []);
+
   useEffect(() => {
     if (files.length > 0) {
-      setImageName(acceptedFiles[0].name)
+      setImageName(acceptedFiles[0].name);
       console.log("upload");
       setDragIsValid(true);
       dispatch(filterActions.dragAndDropState(dragIsValid));
@@ -44,28 +37,20 @@ function BasicDragAndDrop(props) {
       var reader = new FileReader();
       reader.readAsDataURL(acceptedFiles[0]);
       reader.onload = function () {
-        
-        dispatch(filterActions.dragAndDropImage(reader.result))
-        localStorage.setItem('image', reader.result)
-        localStorage.setItem('image-name', acceptedFiles[0].name )
-        console.log(acceptedFiles[0].name)
-        
+        dispatch(filterActions.dragAndDropImage(reader.result));
+        localStorage.setItem("image", reader.result);
+        localStorage.setItem("image-name", acceptedFiles[0].name);
+        console.log(acceptedFiles[0].name);
       };
       reader.onerror = function (error) {
-        console.log('Error: ', error);
+        console.log("Error: ", error);
       };
       return;
     }
-    
-    
   }, [files]);
-  
-  
-  
-  
+
   useEffect(() => {
-    if (localStorage.getItem('image') ) {
-     
+    if (localStorage.getItem("image")) {
     }
   }, [files]);
 
@@ -78,14 +63,14 @@ function BasicDragAndDrop(props) {
         <input {...getInputProps()} />
         <div className={classes.dragText}>ჩააგდე ან ატვირთე ლეპტოპის ფოტო</div>
 
-        <button className={classes.button} onClick={uploadHandler}>
+        <button className={classes.dragButton} onClick={uploadHandler}>
           {" "}
           ატვირთე
         </button>
         {imageName}
       </div>
 
-      <aside></aside>
+      
     </section>
   );
 }

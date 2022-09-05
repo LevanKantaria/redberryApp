@@ -153,6 +153,7 @@ const PageOne = () => {
     positionIsValid &&
     emailIsValid &&
     numberIsValid;
+    useEffect(()=>{dispatch(filterActions.pageOneValidCheck(formIsValid))},[formIsValid])
   const onClickHandler = (event) => {
     
     event.preventDefault();
@@ -178,7 +179,7 @@ const PageOne = () => {
     lastNameClass = classes.nameInputInvalid;
   }
 
-  let teamClass = "";
+  let teamClass = classes.select;
   if (!teamIsValid && teamIsTouched) {
     teamClass = classes.selectInvalid;
   }
@@ -188,21 +189,21 @@ const PageOne = () => {
     positionClass = classes.selectInvalid;
   }
 
-  let emailClass = "";
+  let emailClass = classes.nameWideValid;
   if (!emailIsValid && emailIsTouched) {
     emailClass = classes.nameWideInvalid;
   }
 
-  let numberClass = "";
+  let numberClass = classes.nameWideValid;
   if (!numberIsValid && numberIsTouched) {
     numberClass = classes.nameWideInvalid;
   }
 
   return (
     <div>
-      <div>
+      <div >
         <button className={classes.back} onClick={onBackHandler}>
-          <img src="./Screenshot_4.jpg"></img>
+          <img src="./Screenshot_27.jpg"></img>
         </button>
       </div>
 
@@ -235,8 +236,8 @@ const PageOne = () => {
         {/* Team */}
         <div className={classes.select}>
           <select
-            onChange={teamChangeHanlder}
             className={teamClass}
+            onChange={teamChangeHanlder}
             value={team}
           >
             <option value="">თიმი</option>
@@ -247,7 +248,7 @@ const PageOne = () => {
           </select>
         </div>
         <div className={classes.select}>
-          <select
+          <select 
             id="position-select"
             onChange={positionChangeHandler}
             className={positionClass}

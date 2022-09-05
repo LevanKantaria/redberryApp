@@ -31,6 +31,14 @@
   margin: auto;
 }
 
+.dragButton:hover {
+  background-color: #317ad0;
+}
+
+.dragButton button:active {
+  background-color: #1a5dab;
+}
+
 .dragDropInvalid {
   width: 878px;
   height: 423px;
@@ -54,7 +62,7 @@
   margin-top: 107px;
 }
 
-button {
+.saveButton {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -67,6 +75,14 @@ button {
   border-radius: 8px;
   margin-top: 40px;
   z-index: 2;
+}
+
+.saveButton:hover {
+  background-color: #317ad0;
+}
+
+.saveButton:active {
+  background-color: #1a5dab;
 }
 
 .name_last_name {
@@ -207,6 +223,7 @@ button {
 .radioSelect input {
   margin: 5px;
   margin-left: 0px;
+  
 }
 
 .radioWrap {
@@ -240,20 +257,29 @@ button {
   justify-content: space-between;
 }
 .backButton {
+  position: relative;
   background-color: #4385a900;
   color: #62a1eb;
   font-weight: 500;
   width: 20px;
   font-size: 18px;
+  top: 25px;
 }
+
+.backButton:active{
+  background-color: #1a5eab02;
+}
+
+
+
 
 
 
 @media (max-width: 768px) {
   .back {
     position: absolute;
-    top: -20px;
-    left: 0px;
+    top: -2px;
+    left: -20px;
     width: 27px;
     height: 27px;
     background-color: rgba(128, 128, 128, 0);
@@ -281,6 +307,8 @@ button {
   .dragDrop button {
     display: none;
   }
+
+  
 
   .dragDropInvalid {
     width: 100%;
@@ -479,5 +507,9 @@ button {
     background-color: rgba(255, 0, 0, 0.082);
   }
 
+  .backButton {
+   
+    top: 10px;
+  }
   
 }

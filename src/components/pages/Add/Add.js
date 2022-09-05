@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import axios from "axios";
 import { useHistory } from "react-router";
 import { useState, useLayoutEffect } from "react";
+import { filterActions } from "../../../store";
 
 const Add = () => {
   const form_data = new FormData();
@@ -14,17 +15,28 @@ const Add = () => {
   const history = useHistory();
   const formPage = useSelector((state) => state.main.formPage);
   const width = useSelector((state) => state.main.width);
+  const formOneIsValid = useSelector((state) => state.main.pageOneIsValid);
 
   const dispatch = useDispatch();
 
-  let doc1Style = { borderBottom: "solid 1px black" };
-  let doc2Style = { borderBottom: "solid 1px black" };
+  let doc1Style = { borderBottom: "solid 3px black" };
+  let doc2Style = { borderBottom: "solid 3px black" };
   if (formPage === "1") {
     doc2Style = { borderBottom: "solid 0px black" };
   }
   if (formPage === "2") {
     doc1Style = { borderBottom: "solid 0px black" };
   }
+
+  const doc2ClickHandler = () => {
+    if (formOneIsValid) {
+      dispatch(filterActions.PageSelect("2"));
+    }
+  };
+
+  const doc1ClickHandler = () => {
+    dispatch(filterActions.PageSelect("1"));
+  };
 
   const submitHandler = () => {
     console.log("Step after submit");
@@ -72,10 +84,9 @@ const Add = () => {
     };
     console.log(file + "this is Image");
 
-    for ( var key in uploadData ) {
-      form_data.append(key, uploadData[key])
+    for (var key in uploadData) {
+      form_data.append(key, uploadData[key]);
     }
-    
 
     axios
       .post(
@@ -85,42 +96,33 @@ const Add = () => {
           headers: {
             accept: "application/json",
             "Content-Type": `multipart/form-data`,
-
           },
         }
       )
       .then((res) => {
-        console.log('Log after receiving response')
+        console.log("Log after receiving response");
         console.log(res);
         if (res.statusText === "OK") {
           history.push("/success");
-          // localStorage.clear();
+          localStorage.clear();
 
           return "success!";
         } else {
-          console.log(' Error Log after receiving response')
+          console.log(" Error Log after receiving response");
 
           return "errror!";
         }
       });
-
-    
   };
 
   return (
     <div className={classes.background}>
       {width > 1000 && (
         <div className={classes.top}>
-          <h5
-            style={doc1Style}
-            // onClick={doc1ClickHandler}
-          >
+          <h5 style={doc1Style} onClick={doc1ClickHandler}>
             თანამშრომლების ინფო
           </h5>
-          <h5
-            style={doc2Style}
-            // onClick={doc2ClickHandler}
-          >
+          <h5 style={doc2Style} onClick={doc2ClickHandler}>
             ლეპტოპის მახასიეთებლები
           </h5>
         </div>
