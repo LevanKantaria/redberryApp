@@ -1,6 +1,7 @@
  
 
 
+<img src="/public/preview.jpg  alt="preview"/>
 <h1> About this app </h1>
 
  <h4> This app is done as a qualifying assignment for Redberry intership </h4>
@@ -9,7 +10,6 @@
  <h5> live preview : https://redberry-3458a.web.app/welcome </h5>
 
 
-<img src="/public/preview.jpg  alt="preview"/>
 
   <ul> <h2> Technologies Used <h2>
     <li>React</li>
