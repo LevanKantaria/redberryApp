@@ -15,7 +15,7 @@
     <li>React</li>
      <li>React-Router-Dom </li>
      <li>Redux/toolkit </li>
- <li> axos </li>
+ <li> axios </li>
  
   
   </ul>
