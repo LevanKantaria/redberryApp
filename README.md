@@ -8,9 +8,9 @@
   <p> Once laptop is given to an employee, this app is used to fill the form and send data to the server. </p>
  <h5> live preview : https://redberry-3458a.web.app/welcome </h5>
 
-![Alt text](/preview.jpg?raw=true "Preview ");
-![Alt text](/preview_2.jpg?raw=true "Preview ");
-![Alt text](/preview_3.jpg?raw=true "Preview ");
+![Alt text](/preview.jpg?raw=true "Preview ")
+![Alt text](/preview_2.jpg?raw=true "Preview ")
+![Alt text](/preview_3.jpg?raw=true "Preview ")
 
 
   <ul> <h2> Technologies Used <h2>
