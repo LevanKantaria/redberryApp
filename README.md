@@ -1,5 +1,8 @@
-<div> <img src="/public/preview_3.jpg" alt="preview" /> </div>
-<div> <img src="/public/preview_2.jpg  alt="preview"/></div>
+<p float="left">
+  <img src="/public/preview.jpg" width="100" />
+  <img src="/public/preview_2.jpg" width="100" /> 
+  <img src="/public/preview_3.jpg" width="100" />
+</p>
 <h1> About this app </h1>
 
  <h4> This app is done as a qualifying assignment for Redberry intership </h4>
