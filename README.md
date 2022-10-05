@@ -1,6 +1,4 @@
- 
-
-
+<img src="/public/preview.jpg" alt="preview" />
 <img src="/public/preview.jpg  alt="preview"/>
 <h1> About this app </h1>
 
