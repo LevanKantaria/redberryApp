@@ -1,6 +1,6 @@
 <h1> About this app </h1>
 
- <p> This app is done as a qualifying assignment for Redberry intership </p>
+ <h4> This app is done as a qualifying assignment for Redberry intership </h4>
 
 
 <h1> Technologies Used <h1>
