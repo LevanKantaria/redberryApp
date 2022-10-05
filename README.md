@@ -10,11 +10,12 @@
 
 ![Alt text](/preview.jpg?raw=true "Preview ")
 
-<h1> Technologies Used <h1>
-  <ul> 
+
+  <ul> <h2> Technologies Used <h2>
     <li>React</li>
      <li>React-Router-Dom </li>
      <li>Redux/toolkit </li>
+ <li> axos </li>
  
   
   </ul>
