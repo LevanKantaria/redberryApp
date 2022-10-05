@@ -9,7 +9,7 @@
  <h5> live preview : https://redberry-3458a.web.app/welcome </h5>
 
 ![Alt text](/preview.jpg?raw=true "Preview ")
-<img src="/public/preview 2.jpg alt="preview" />
+<img src="/public/preview2.jpg alt="preview" />
 
 
   <ul> <h2> Technologies Used <h2>
