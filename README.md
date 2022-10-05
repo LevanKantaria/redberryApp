@@ -1,7 +1,7 @@
 <p float="left">
-  <img src="/public/preview.jpg" width="1000" />
-  <img src="/public/preview_2.jpg" width="1000" /> 
-  <img src="/public/preview_3.jpg" width="1000" />
+  <img src="/public/preview.jpg" width="500" />
+  <img src="/public/preview_2.jpg" width="500" /> 
+  <img src="/public/preview_3.jpg" width="500" />
 </p>
 <h1> About this app </h1>
 
