@@ -1,5 +1,5 @@
 <img src="/public/preview.jpg" alt="preview" />
-<img src="/public/preview.jpg  alt="preview"/>
+<img src="/public/preview_2.jpg  alt="preview"/>
 <h1> About this app </h1>
 
  <h4> This app is done as a qualifying assignment for Redberry intership </h4>
